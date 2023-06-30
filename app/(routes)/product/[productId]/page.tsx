@@ -13,11 +13,11 @@ interface ProductPageProps {
   },
 }
 
-const ProductPage: React.FC<ProductPageProps> = async ({ 
+const ProductPage: React.FC<ProductPageProps> = async ({
   params
- }) => {
+}) => {
   const product = await getProduct(params.productId);
-  const suggestedProducts = await getProducts({ 
+  const suggestedProducts = await getProducts({
     categoryId: product?.category?.id
   });
 
@@ -36,10 +36,10 @@ const ProductPage: React.FC<ProductPageProps> = async ({
             </div>
           </div>
           <hr className="my-10" />
-          <ProductList title="Related Items" items={suggestedProducts} />
+          <ProductList title="สินค้าที่เกี่ยวข้อง" items={suggestedProducts} />
         </div>
       </Container>
-    </div>  
+    </div>
   )
 }
 
